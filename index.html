@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Loan calculator</h1>
+    <p class="intro">Enter a loan to see what you will pay each month.</p>
+
+    <form id="loan-form" novalidate>
+      <label for="amount">Loan amount</label>
+      <input id="amount" type="number" min="0" step="any" inputmode="decimal" placeholder="1000000" required>
+
+      <label for="rate">Yearly interest rate (%)</label>
+      <input id="rate" type="number" min="0" step="any" inputmode="decimal" placeholder="5" required>
+
+      <label for="months">Duration (months)</label>
+      <input id="months" type="number" min="1" step="1" inputmode="numeric" placeholder="24" required>
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <p id="error" role="alert" hidden></p>
+
+    <section id="result" aria-live="polite" hidden>
+      <p class="label">Monthly payment</p>
+      <p id="monthly" class="big"></p>
+      <dl>
+        <div><dt>Total paid</dt><dd id="total"></dd></div>
+        <div><dt>Total interest</dt><dd id="interest"></dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
